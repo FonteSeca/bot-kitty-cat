@@ -27,7 +27,7 @@
 
         case 'test':
           return test(msg, suffix);
-        case 'ohayo'
+        case 'ohayo':
           return ohayo(msg, suffix);
         case 'banho':
           return banho(msg, suffix);
