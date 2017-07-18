@@ -86,7 +86,7 @@
   }
 
   function test(msg, suffix) {
-    if (isAdmin(message.member)) {
+    if (isAdmin(message.member.hasPermission('ADMINISTRATOR'))) {
       msg.channel.send(basicembed('5351170', 'Com permissão, nha'));
     } else {
       msg.channel.send(basicembed('5351170', 'Sem permissão'));  
