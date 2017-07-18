@@ -5,7 +5,7 @@
 
   Bot.on('ready', () => {
       console.log(`[Start] ${new Date()}`);
-      Bot.user.setGame('O-onii-san... :heart:')
+      Bot.user.setGame('O-onii-san... <3')
   });
 
   music(Bot);
@@ -80,13 +80,15 @@
 
   function ohayo(msg, suffix) {
     const mention = msg.mentions.users.first();
-    msg.channel.send(basicembed('5351170', 'Ohayo' + mention.toString()));
+    msg.channel.send(basicembed('5351170', 'Ohayo ' + mention.toString()));
   }
 
   function test(msg, suffix) {
-    msg.channel.send(basicembed('5351170', 'Com permissão, nha'));
-
-    msg.channel.send(basicembed('5351170', 'Sem permissão'));
+    if (isAdmin(member === true)) {
+      msg.channel.send(basicembed('5351170', 'Com permissão, nha'));
+    } else {
+      msg.channel.send(basicembed('5351170', 'Sem permissão'));  
+    }
   }
 
   function banho(msg, suffix) {
