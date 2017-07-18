@@ -37,17 +37,9 @@
           return beijo(msg, suffix);
         case 'say':
           return say(msg, suffix);
+        case 'onii':
+          return onii(msg, suffix);
       }
-      // if (CLEAR_INVOKER) {
-      //   msg.delete();
-      // }
-    }
-
-    if ((/!!banho/).test(message.content)) {
-      message.channel.send(message.author.toString() + ' está dando banho na ' + Bot.user, {file: "https://68.media.tumblr.com/cbad86fd71e480486c1d6ef983a03b97/tumblr_o4jxlkyrMd1rc0rvzo1_500.png"}); // Mensagem normal
-      message.delete()
-      .then(msg => console.log(`Deleted message from ${msg.author}`))
-      .catch(console.error);
     }
 
     if ((/~lolicon/).test(message.content)) {
@@ -79,6 +71,7 @@
 }
 
   function ohayo(msg, suffix) {
+    msg.delete();
     const mention = msg.mentions.users.first();
     msg.channel.send(basicembed('5351170', 'Ohayo ' + mention.toString()));
   }
@@ -88,6 +81,7 @@
   }
 
   function test(msg, suffix) {
+    msg.delete();
     if (isAdmin(msg.member)) {
       msg.channel.send(basicembed('5351170', 'Com permissão, nha'));
     } else {
@@ -96,21 +90,30 @@
   }
 
   function banho(msg, suffix) {
+    msg.delete();
     const mention = msg.mentions.users.first();
     msg.channel.send(imageembed('5351170', 'https://68.media.tumblr.com/cbad86fd71e480486c1d6ef983a03b97/tumblr_o4jxlkyrMd1rc0rvzo1_500.png', mention.toString() + ' está dando banho na ' + Bot.user));
   }
 
   function beijo(msg, suffix) {
+    msg.delete();
     const mention = msg.mentions.users.first();
     msg.channel.send(imageembed('5351170', 'https://i.ytimg.com/vi/_IRuDIsj3vE/maxresdefault.jpg', mention.toString() + ' deu beijo indireto na ' + Bot.user));
   }
 
   function say(msg, suffix) {
+    msg.delete();
     msg.channel.send(basicembed('5351170', suffix));
   }
 
+  function onii(msg, suffix) {
+    msg.delete();
+    msg.channel.send(basicembed('5351170', mention.toString() + ', O-onii-san'));
+  }
+
   function ajuda(msg, suffix) {
-      msg.channel.send({embed: {
+    msg.delete();
+    msg.channel.send({embed: {
       color: 3447003,
       author: {
         name: Bot.user.username,
@@ -119,13 +122,13 @@
       title: "COMANDOS DA KITTY-CAT",
       description: "B-baka :heart: ",
       fields: [{
-          name: "!banho @user",
-          value: "@user da banho na Kitty"
-        },
-        {
-          name: "RABBITÃO",
-          value: "[Rabbit - iFonteSeca](https://www.rabb.it/ifonteseca) \r[Rabbit - MaVi](https://www.rabb.it/MaVi) "
-        },
+        name: "!banho @user",
+        value: "@user da banho na Kitty"
+      },
+      {
+        name: "RABBITÃO",
+        value: "[Rabbit - iFonteSeca](https://www.rabb.it/ifonteseca) \r[Rabbit - MaVi](https://www.rabb.it/MaVi) "
+      },
       ],
       timestamp: new Date(),
       footer: {
