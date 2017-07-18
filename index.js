@@ -27,6 +27,8 @@
 
         case 'test':
           return test(msg, suffix);
+        case 'ohayo'
+          return ohayo(msg, suffix);
         case 'banho':
           return banho(msg, suffix);
         case 'sopa':
@@ -37,11 +39,6 @@
       // if (CLEAR_INVOKER) {
       //   msg.delete();
       // }
-    }
-
-
-    if (message.content === '!!ohayo') {
-      message.reply('Ohayo!!');
     }
 
     if ((/!!banho/).test(message.content)) {
@@ -80,6 +77,11 @@
     "url": image}
     }};
 }
+
+  function ohayo(msg, suffix) {
+    const mention = message.mentions.users.first();
+    msg.channel.send(basicembed('5351170', 'Ohayo' + mention.toString()));
+  }
 
   function test(msg, suffix) {
     msg.channel.send(basicembed('5351170', 'Com permissão, nha'));
