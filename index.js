@@ -5,7 +5,7 @@
 
   Bot.on('ready', () => {
       console.log(`[Start] ${new Date()}`);
-      Bot.user.setGame('Nha')
+      Bot.user.setGame('O-onii-san... :heart:')
   });
 
   music(Bot);
