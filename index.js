@@ -81,8 +81,12 @@
     msg.channel.send(basicembed('5351170', 'Ohayo ' + mention.toString()));
   }
 
+  function isAdmin(member) {
+    return member.hasPermission("ADMINISTRATOR");
+  }
+
   function test(msg, suffix) {
-    if (message.author.hasPermission('ADMINISTRATOR')) {
+    if (isAdmin(msg.member)) {
       msg.channel.send(basicembed('5351170', 'Com permissão, nha'));
     } else {
       msg.channel.send(basicembed('5351170', 'Sem permissão'));  
