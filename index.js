@@ -39,6 +39,10 @@
           return say(msg, suffix);
         case 'onii':
           return onii(msg, suffix);
+        case 'ajuda':
+          return ajuda(msg, suffix);
+        default:
+          msg.channel.send(basicembed('5351170', 'Comando errado ' + msg.author + ' b-baka...'));
       }
     }
 
