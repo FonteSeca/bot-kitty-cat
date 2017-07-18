@@ -35,6 +35,8 @@
           return sopa(msg, suffix);
         case 'beijo':
           return beijo(msg, suffix);
+        case 'say':
+          return say(msg, suffix);
       }
       // if (CLEAR_INVOKER) {
       //   msg.delete();
@@ -101,6 +103,10 @@
   function beijo(msg, suffix) {
     const mention = msg.mentions.users.first();
     msg.channel.send(imageembed('5351170', 'https://i.ytimg.com/vi/_IRuDIsj3vE/maxresdefault.jpg', mention.toString() + ' deu beijo indireto na ' + Bot.user));
+  }
+
+  function say(msg, suffix) {
+    msg.channel.send(basicembed('5351170', msg));
   }
 
   function ajuda(msg, suffix) {
