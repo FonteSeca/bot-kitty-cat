@@ -106,7 +106,7 @@
   }
 
   function say(msg, suffix) {
-    msg.channel.send(basicembed('5351170', msg));
+    msg.channel.send(basicembed('5351170', suffix));
   }
 
   function ajuda(msg, suffix) {
