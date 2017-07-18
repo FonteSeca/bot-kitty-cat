@@ -79,7 +79,7 @@
 }
 
   function ohayo(msg, suffix) {
-    const mention = message.mentions.users.first();
+    const mention = msg.mentions.users.first();
     msg.channel.send(basicembed('5351170', 'Ohayo' + mention.toString()));
   }
 
