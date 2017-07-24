@@ -10,41 +10,50 @@
 
   music(Bot);
 
-  let PREFIX = '!';
+  let PREFIX = '+';
 
   Bot.on('message', msg => {
 
     const message = msg.content.trim();
 
-    // Check if the message is a command.
+    // Verifica se a mensagem é um comando
     if (message.toLowerCase().startsWith(PREFIX.toLowerCase())) {
       // Get the command and suffix.
       const command = message.substring(PREFIX.length).split(/[ \n]/)[0].toLowerCase().trim();
       const suffix = message.substring(PREFIX.length + command.length).trim();
 
-      // Process the commands.
-      switch (command) {
+      // Comando
+	   switch (command) {
+ 		case 'permission':
+			return test(msg, suffix);
+		case 'ohayo':
+			return ohayo(msg, suffix);
+		case 'kiss':
+			return kiss(msg, suffix);
+		case 'say':
+			return say(msg, suffix);
+		case 'onii':
+			return onii(msg, suffix);
+		case 'ship':
+			return ship(msg, suffix);
+		case 'casar':
+			return casar(msg, suffix);
 
-        case 'test':
-          return test(msg, suffix);
-        case 'ohayo':
-          return ohayo(msg, suffix);
-        case 'banho':
-          return banho(msg, suffix);
-        case 'sopa':
-          return sopa(msg, suffix);
-        case 'beijo':
-          return beijo(msg, suffix);
-        case 'say':
-          return say(msg, suffix);
-        case 'onii':
-          return onii(msg, suffix);
-        case 'ajuda':
-          return ajuda(msg, suffix);
-        default:
-          msg.channel.send(basicembed('5351170', 'Comando errado ' + msg.author + ' b-baka...'));
-      }
-    }
+		// Comandos Kitty-cat
+		case 'banho':
+			return banho(msg, suffix);
+		case 'sopa':
+			return sopa(msg, suffix);
+		case 'beijo':
+			return beijo(msg, suffix);
+
+		// Comandos Suporte Adm
+		case 'ajuda':
+			return ajuda(msg, suffix);
+		default:
+			msg.channel.send(basicembed('5351170', 'Comando errado ' + msg.author + ' b-baka...'));
+		}
+	}
 
     if ((/~lolicon/).test(message.content)) {
       const mention = message.mentions.users.first();
@@ -55,8 +64,6 @@
       message.delete().then(msg => console.log(`Deleted message from ${msg.author}`)).catch(console.error);
     }
   });
-
-
 
   function basicembed(color,text) {
     return {embed: {
@@ -84,7 +91,7 @@
     return member.hasPermission("ADMINISTRATOR");
   }
 
-  function test(msg, suffix) {
+  function permission(msg, suffix) {
     msg.delete();
     if (isAdmin(msg.member)) {
       msg.channel.send(basicembed('5351170', 'Com permissão, nha'));
@@ -105,11 +112,29 @@
     msg.channel.send(imageembed('5351170', 'https://i.ytimg.com/vi/_IRuDIsj3vE/maxresdefault.jpg', mention.toString() + ' deu beijo indireto na ' + Bot.user));
   }
 
+function kiss(msg, suffix) {
+msg.delete();
+const mention = msg.mentions.users.first();
+const mention_other = msg.mentions.users.last();
+msg.channel.send(basicembed('5351170', mention.toString() + ' deu um beijo em ' + mention_other.toString()));
+}
+
+function ship(msg, suffix) {
+msg.delete();
+const mention = msg.mentions.users.first();
+const mention_other = msg.mentions.users.last();
+const ship_trimOne = mention.substring(4);
+const ship_trimTwo = mention_other.substring(4);
+const ship_name = ship_trimOne + ship_trimTwo;
+
+msg.channel.send(basicembed('5351170', ship_name));
+}
+
   function say(msg, suffix) {
     msg.delete();
     msg.channel.send(basicembed('5351170', suffix));
   }
-
+.
   function onii(msg, suffix) {
     msg.delete();
     msg.channel.send(basicembed('5351170', mention.toString() + ', O-onii-san'));
