@@ -1,7 +1,7 @@
   const Discord = require('discord.js');
   const music = require('discord.js-music-v11');
   const Bot = new Discord.Client();
-  const token = "MzM2MjcwODE2NTE1OTgxMzIy.DE19wQ.XNIVAlwWq4Q9WR2-7UvYYBkmEhM"; // Recommended to load from json file.
+  const token = "MzM2MjcwODE2NTE1OTgxMzIy.DE19wQ.XNIVAlwWq4Q9WR2-7UvYYBkmEhM" // Recommended to load from json file.
 
   Bot.on('ready', () => {
       console.log(`[Start] ${new Date()}`);
@@ -134,7 +134,7 @@
     msg.delete();
     msg.channel.send(basicembed('5351170', suffix));
   }
-.
+
   function onii(msg, suffix) {
     msg.delete();
     msg.channel.send(basicembed('5351170', mention.toString() + ', O-onii-san'));
