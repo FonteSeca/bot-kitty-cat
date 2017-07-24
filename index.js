@@ -122,9 +122,9 @@
   function ship(msg, suffix) {
     msg.delete();
     const mention = msg.mentions.users.first();
-    const strmention = mention.toString();
+    const strmention = mention.username.toString();
     const mention_other = msg.mentions.users.last();
-    const strmention_other = mention_other.toString();
+    const strmention_other = mention_other.username.toString();
     const ship_trimOne = strmention.substring(4);
     const ship_trimTwo = strmention_other.substring(4);
     const ship_name = ship_trimOne + ship_trimTwo;
