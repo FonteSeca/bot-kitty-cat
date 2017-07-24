@@ -50,6 +50,8 @@
 		// Comandos Suporte Adm
 		case 'ajuda':
 			return ajuda(msg, suffix);
+    case 'delet':
+      return delet(msg, suffix);
 		default:
 			msg.channel.send(basicembed('5351170', 'Comando errado ' + msg.author + ' b-baka...'));
 		}
@@ -96,7 +98,7 @@
     if (isAdmin(msg.member)) {
       msg.channel.send(basicembed('5351170', 'Com permissão, nha'));
     } else {
-      msg.channel.send(basicembed('5351170', 'Sem permissão'));  
+      msg.channel.send(basicembed('5351170', 'Sem permissão'));
     }
   }
 
@@ -130,7 +132,7 @@
     const ship_name = ship_trimOne + ship_trimTwo;
 
     msg.channel.send(basicembed('5351170', ship_name));
-}
+  }
 
   function say(msg, suffix) {
     msg.delete();
@@ -169,5 +171,11 @@
     }
   });
   }
+
+    function delet(msg, suffix) {
+      const messages = msg.channel.DownloadMessages(5);
+
+      msg.DeleteMessages(messages);
+    }
 
   Bot.login(token);
