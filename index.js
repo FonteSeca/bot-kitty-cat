@@ -1,7 +1,7 @@
   const Discord = require('discord.js');
   const music = require('discord.js-music-v11');
   const Bot = new Discord.Client();
-  const token = "MzM2MjcwODE2NTE1OTgxMzIy.DE19wQ.XNIVAlwWq4Q9WR2-7UvYYBkmEhM" // Recommended to load from json file.
+  const token = "MzM2MjcwODE2NTE1OTgxMzIy.DE19wQ.XNIVAlwWq4Q9WR2-7UvYYBkmEhM"; // Recommended to load from json file.
 
   Bot.on('ready', () => {
       console.log(`[Start] ${new Date()}`);
@@ -112,22 +112,22 @@
     msg.channel.send(imageembed('5351170', 'https://i.ytimg.com/vi/_IRuDIsj3vE/maxresdefault.jpg', mention.toString() + ' deu beijo indireto na ' + Bot.user));
   }
 
-function kiss(msg, suffix) {
-msg.delete();
-const mention = msg.mentions.users.first();
-const mention_other = msg.mentions.users.last();
-msg.channel.send(basicembed('5351170', mention.toString() + ' deu um beijo em ' + mention_other.toString()));
-}
+  function kiss(msg, suffix) {
+    msg.delete();
+    const mention = msg.mentions.users.first();
+    const mention_other = msg.mentions.users.last();
+    msg.channel.send(basicembed('5351170', mention.toString() + ' deu um beijo em ' + mention_other.toString()));
+  }
 
-function ship(msg, suffix) {
-msg.delete();
-const mention = msg.mentions.users.first();
-const mention_other = msg.mentions.users.last();
-const ship_trimOne = mention.substring(4);
-const ship_trimTwo = mention_other.substring(4);
-const ship_name = ship_trimOne + ship_trimTwo;
+  function ship(msg, suffix) {
+    msg.delete();
+    const mention = msg.mentions.users.first();
+    const mention_other = msg.mentions.users.last();
+    const ship_trimOne = mention.substring(4);
+    const ship_trimTwo = mention_other.substring(4);
+    const ship_name = ship_trimOne + ship_trimTwo;
 
-msg.channel.send(basicembed('5351170', ship_name));
+    msg.channel.send(basicembed('5351170', ship_name));
 }
 
   function say(msg, suffix) {
