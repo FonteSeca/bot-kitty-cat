@@ -122,11 +122,11 @@
   function ship(msg, suffix) {
     msg.delete();
     const mention = msg.mentions.users.first();
-    mention = mention.toString();
+    const strmention = mention.toString();
     const mention_other = msg.mentions.users.last();
-    mention_other = mention_other.toString();
-    const ship_trimOne = mention.substring(4);
-    const ship_trimTwo = mention_other.substring(4);
+    const strmention_other = mention_other.toString();
+    const ship_trimOne = strmention.substring(4);
+    const ship_trimTwo = strmention_other.substring(4);
     const ship_name = ship_trimOne + ship_trimTwo;
 
     msg.channel.send(basicembed('5351170', ship_name));
